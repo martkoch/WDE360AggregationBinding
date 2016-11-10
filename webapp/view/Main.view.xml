@@ -1,0 +1,29 @@
+<mvc:View controllerName="com.sap.training.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form">
+
+<Carousel pages="{/data}">
+    <pages>
+        <f:SimpleForm >
+            <f:content>
+                <Label text="Fluggesellschaft" />
+                <Input value="{carrId}" valueLiveUpdate="true" />
+                <Label text="Flugnummer" />
+                <Text text="{connId}" />
+                <Label text="Abflugort" />
+                <Text text="{cityFrom}" />
+                <Label text="Zielort" />
+                <Text text="{cityTo}" />
+            </f:content>
+        </f:SimpleForm>
+    </pages>
+</Carousel>
+<List items="{/data}">
+    <items>
+        <StandardListItem
+				title="Flug {connId} operated by {carrId}"
+				description="{cityFrom} - {cityTo}" />
+    </items>
+</List>
+
+</mvc:View>
